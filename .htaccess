@@ -1,13 +1,15 @@
-RewriteEngine On
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
 
-# Ne jamais réécrire /api
-RewriteCond %{REQUEST_URI} ^/api/ [NC]
-RewriteRule ^ - [L]
+  # Ne pas réécrire l'API
+  RewriteRule ^api/ - [L]
 
-# Fichiers et dossiers existants
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
+  # Laisse passer les fichiers/dossiers existants
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
 
-# SPA fallback pour React Router
-RewriteRule ^ index.html [L]
+  # Fallback SPA
+  RewriteRule ^ index.html [L]
+</IfModule>
