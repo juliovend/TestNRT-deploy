@@ -1,3 +1,3 @@
 source_repo=TestNRT
-commit_sha=70fa6aa052958177d6e70bef0e9d727894301361
-deployed_at_utc=2026-02-25T11:35:33Z
+commit_sha=6138ff7d922fbf6ee18934c21abc06b5f5114fab
+deployed_at_utc=2026-02-25T13:24:58Z
